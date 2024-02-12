@@ -80,13 +80,13 @@ def Inventairephysique():
                   Stock_mobilier+=el["stock"]
                 if el["categorie"].lower()=="nettoyage":
                   total_des_articles+=el["stock"]
-                  Stock_mobilier+=el["stock"]
+                  Stock_nettoyage+=el["stock"]
                 if el["categorie"].lower()=="patriciere":
                   total_des_articles+=el["stock"]
-                  Stock_mobilier+=el["stock"]
+                  Stock_patricier+=el["stock"]
                 if el["categorie"].lower()=="electronic":
                   total_des_articles+=el["stock"]
-                  Stock_mobilier+=el["stock"]
+                  Stock_electronic+=el["stock"]
             print("###################INVENTAIREPHYSIQUE###############################")
             print(f"Stock_mobilier : {Stock_mobilier} Article")
             print(f"Stock_patricier : {Stock_patricier} Article")
@@ -146,5 +146,5 @@ def Modifier(reference):
             print("pas article avec votre reference")
     except:
         print("pas drs articles!!")
-Modifier(2)
+Inventairephysique()
 
