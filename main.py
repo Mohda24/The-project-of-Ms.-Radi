@@ -127,4 +127,24 @@ def InventaireComptable():
             print(f"Prixtotal_des_articles : {Prixtotal_des_articles} DH")
     except:
         print("pas des articles!!!!")
+def Modifier(reference):
+    try:
+        with open("products.json","r") as myfile:
+            mylist=json.load(myfile)
+        found=False
+        for el in mylist:
+            if el["Reference"]==reference:
+                found=True
+                new_ref=""
+                while type(new_ref)!=int:
+                    new_ref=int(input("entrer new Reference : "))
+                el["Reference"]=new_ref
+        if found:
+            with open("products.json","w") as myfile:
+                json.dump(mylist,myfile,indent=2)
+        else:
+            print("pas article avec votre reference")
+    except:
+        print("pas drs articles!!")
+Modifier(2)
 
